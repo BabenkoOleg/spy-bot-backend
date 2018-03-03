@@ -1,0 +1,8 @@
+production:
+  sequel_database:
+  sequel_adapter:
+  sequel_max_connections:
+  sequel_log_file_path:
+
+  upwork_api_consumer_secret:
+  upwork_api_consumer_key:

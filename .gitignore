@@ -1,8 +1,8 @@
-.env
 .byebug_history
 .idea
 *.dump
 *.DS_Store
+application.yml
 Thumbs.db
 log/*.log
 tmp/
