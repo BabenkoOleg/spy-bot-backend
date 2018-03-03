@@ -4,8 +4,8 @@ require 'logger'
 require 'yaml'
 require 'figaro'
 
-require './config/initializers/figaro.rb'
-require './config/initializers/sequel.rb'
+require './config/figaro.rb'
+require './config/sequel.rb'
 
 require './app/api.rb'
 
