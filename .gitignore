@@ -1,0 +1,8 @@
+.env
+.byebug_history
+.idea
+*.dump
+*.DS_Store
+Thumbs.db
+log/*.log
+tmp/
