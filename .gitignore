@@ -2,7 +2,7 @@
 .idea
 *.dump
 *.DS_Store
-application.yml
+secrets.yml
 Thumbs.db
 log/*.log
 tmp/
