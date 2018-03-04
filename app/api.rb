@@ -1,12 +1,16 @@
 class API < Sinatra::Base
   get '/start-observation' do
-    o = Observation.create(
+    Observation.create(
       q: params[:q],
       title: params[:title],
       skills: params[:skills],
       category: params[:category],
       subcategory: params[:subcategory]
     ).values.to_json
+  end
+
+  get '/start-redis' do
+    DetectionWorks.perform_in(ENV['sidekiq_job_interval'], false)
   end
 
   get '/get-skills' do
