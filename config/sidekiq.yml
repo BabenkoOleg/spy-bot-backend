@@ -1,4 +1,4 @@
-:verbose:     true
+:verbose:     false
 :require:     ./boot.rb
 :pidfile:     ./tmp/sidekiq-config-test.pid
 :logfile:     ./log/sidekiq.log
