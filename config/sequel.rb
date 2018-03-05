@@ -41,7 +41,7 @@ DATA_BASE.create_table? :jobs do
   String :duration
   String :workload
   String :job_status
-  DateTime :created_at
+  column :created_at, 'timestamp with time zone'
   index :upwork_id
 end
 
