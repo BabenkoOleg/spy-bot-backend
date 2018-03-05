@@ -32,6 +32,7 @@ DATA_BASE.create_table? :jobs do
   primary_key :id
   foreign_key :category_id, :categories
   foreign_key :subcategory_id, :subcategories
+  String :url
   String :upwork_id
   String :title
   String :snippet

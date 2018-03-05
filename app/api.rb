@@ -10,7 +10,7 @@ class API < Sinatra::Base
   end
 
   get '/start-redis' do
-    DetectionWorks.perform_in(ENV['sidekiq_job_interval'], false)
+    DetectionWorks.perform_in(ENV['sidekiq_job_interval'])
   end
 
   get '/get-skills' do
