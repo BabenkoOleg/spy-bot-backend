@@ -2,6 +2,7 @@ require 'sidekiq'
 
 class DetectionWorks
   include Sidekiq::Worker
+  sidekiq_options queue: 'spy-bot'
 
   def perform
     Observation.all.each do |observation|
