@@ -3,3 +3,5 @@
 :pidfile:     ./tmp/sidekiq-config-test.pid
 :logfile:     ./tmp/sidekiq.log
 :concurrency: 1
+:queues:
+  - spy-bot
