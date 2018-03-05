@@ -10,6 +10,10 @@ class UpworkClient
       Upwork::Api::Routers::Jobs::Search.new(client).find(filter)
     end
 
+    def get_categories
+      Upwork::Api::Routers::Metadata.new(client).get_categories_v2
+    end
+
     def get_skills
       Upwork::Api::Routers::Metadata.new(client).get_skills
     end

@@ -30,17 +30,18 @@ end
 
 DATA_BASE.create_table? :jobs do
   primary_key :id
-  foreign_key :category_id, :categories
-  foreign_key :subcategory_id, :subcategories
+  String :category
+  String :subcategy
+  String :skills
   String :url
   String :upwork_id
   String :title
   String :snippet
   String :job_type
-  Integer :budget
   String :duration
   String :workload
   String :job_status
+  Integer :budget
   column :created_at, 'timestamp with time zone'
   index :upwork_id
 end
