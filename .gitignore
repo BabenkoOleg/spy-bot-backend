@@ -2,7 +2,9 @@
 .idea
 *.dump
 *.DS_Store
-config/environment.yml
 Thumbs.db
-log/*.log
-tmp/
+/config/environment.yml
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep

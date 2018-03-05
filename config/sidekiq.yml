@@ -1,6 +1,6 @@
 :verbose:     false
 :require:     ./boot.rb
-:pidfile:     ./tmp/sidekiq-config-test.pid
+:pidfile:     ./tmp/sidekiq.pid
 :logfile:     ./log/sidekiq.log
 :concurrency: 1
 :queues:
