@@ -24,6 +24,8 @@ class CheckNewJobs
       )
     end
 
+    logger.info "Found new jobs: #{jobs.count}"
+
     jobs.each { |job| SpyBot::ApiClient::Slack.send_job_notifications(job) }
   end
 end
