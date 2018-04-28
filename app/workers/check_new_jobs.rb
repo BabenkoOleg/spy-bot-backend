@@ -1,6 +1,6 @@
 class CheckNewJobs
   include Sidekiq::Worker
-  sidekiq_options queue: 'spy-bot'
+  sidekiq_options queue: 'spy-bot', retry: false
 
   def perform
     jobs = YAML.load_file('./config/search.yml').map do |filter|
@@ -8,7 +8,7 @@ class CheckNewJobs
       SpyBot::ApiClient::Upwork.find_jobs(filter)
     end
 
-    jobs.flatten!
+    jobs = jobs.flatten.uniq { |job| job['id'] }
 
     already_exist_ids = Job.where(upwork_id: jobs.map { |job| job['id'] }).select_map(:upwork_id)
     jobs.reject! { |data| already_exist_ids.include?(data['id']) }
