@@ -1,4 +1,4 @@
-searching_filter:
+- searching:
 
   # The search query. At least one of the 'q', 'title', 'skill' parameters should be specified.
   q:
@@ -24,8 +24,7 @@ searching_filter:
   # Default: 0;10 Pagination, formed as '$offset;$count'. Page size is restricted to be <= 100. Example: page=20;10.
   paging:
 
-processing_filter:
+processing:
 
   # Exclusion from the final processing of works that have such skills. Example: 'python,php'.
-  except_skills: 'php'
-
+  excepted_skills: 'php'

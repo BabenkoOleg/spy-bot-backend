@@ -6,10 +6,15 @@ module SpyBot
     class Upwork
       class << self
         def find_jobs(filter)
-          jobs = ::Upwork::Api::Routers::Jobs::Search.new(client).find(searching_filter(filter))['jobs']
+          searching_filter = filter['searching'].select { |k, v| !v.nil? }
+          jobs = ::Upwork::Api::Routers::Jobs::Search.new(client).find(searching_filter)['jobs']
 
-          pf = processing_filter(filter)
-          jobs.reject! { |data| data['skills'] & pf['skills'].split(',') } if pf['skills'].present?
+          processing_filter = filter['processing'].select { |k, v| !v.nil? }
+
+          if processing_filter['excepted_skills'].present?
+            excepted_skills = processing_filter['excepted_skills'].split(', ')
+            jobs.reject! { |data| (data['skills'] & excepted_skills).any? }
+          end
 
           jobs
         end
@@ -19,14 +24,6 @@ module SpyBot
 
           config = ::Upwork::Api::Config.new(SpyBot.config.upwork_api_client_config)
           ::Upwork::Api::Client.new(config)
-        end
-
-        def searching_filter(filter)
-          filter['searching_filter'].select { |k, v| !v.nil? }
-        end
-
-        def processing_filter(filter)
-          filter['processing_filter'].select { |k, v| !v.nil? }
         end
       end
     end

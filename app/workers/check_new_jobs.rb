@@ -3,7 +3,12 @@ class CheckNewJobs
   sidekiq_options queue: 'spy-bot'
 
   def perform
-    jobs = SpyBot::ApiClient::Upwork.find_jobs(YAML.load_file('./config/search.yml'))
+    jobs = YAML.load_file('./config/search.yml').map do |filter|
+      logger.info "Search by: #{filter.to_s}"
+      SpyBot::ApiClient::Upwork.find_jobs(filter)
+    end
+
+    jobs.flatten!
 
     already_exist_ids = Job.where(upwork_id: jobs.map { |job| job['id'] }).select_map(:upwork_id)
     jobs.reject! { |data| already_exist_ids.include?(data['id']) }
@@ -24,9 +29,9 @@ class CheckNewJobs
       )
     end
 
-    logger.info "Found new jobs: #{jobs.count}"
-
     jobs.each { |job| SpyBot::ApiClient::Slack.send_job_notifications(job) }
+
+    logger.info "Found new jobs: #{jobs.count}"
   end
 end
 
