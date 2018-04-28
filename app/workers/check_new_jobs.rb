@@ -4,7 +4,6 @@ class CheckNewJobs
 
   def perform
     jobs = YAML.load_file('./config/search.yml').map do |filter|
-      logger.info "Search by: #{filter.to_s}"
       SpyBot::ApiClient::Upwork.find_jobs(filter)
     end
 
