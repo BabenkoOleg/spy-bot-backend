@@ -13,6 +13,8 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     equalizer (0.0.11)
+    et-orbi (1.1.0)
+      tzinfo
     faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
@@ -32,12 +34,19 @@ GEM
     rack-protection (2.0.1)
       rack
     redis (4.0.1)
+    rufus-scheduler (3.4.2)
+      et-orbi (~> 1.0)
     sequel (5.6.0)
     sidekiq (5.1.1)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
+    sidekiq-scheduler (2.2.1)
+      redis (>= 3, < 5)
+      rufus-scheduler (~> 3.2)
+      sidekiq (>= 3)
+      tilt (>= 1.4.0)
     sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -50,6 +59,8 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
     upwork-api (1.2.2)
       oauth (>= 0.4.7)
     virtus (1.0.5)
@@ -69,6 +80,7 @@ DEPENDENCIES
   puma
   sequel
   sidekiq
+  sidekiq-scheduler
   sinatra
   telegram-bot-ruby
   upwork-api

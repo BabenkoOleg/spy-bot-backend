@@ -1,7 +1,11 @@
-:verbose:     false
+:verbose:     true
 :require:     ./boot.rb
 :pidfile:     ./tmp/sidekiq.pid
 :logfile:     ./log/sidekiq.log
 :concurrency: 1
+max_retries:  0
 :queues:
   - spy-bot
+:schedule:
+  CheckNewJobs:
+    every: '20s'
