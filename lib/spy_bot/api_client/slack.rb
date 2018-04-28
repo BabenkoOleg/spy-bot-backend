@@ -7,8 +7,8 @@ module SpyBot
             channel: SpyBot.config.slack_api_client_channel,
             text: job.to_message,
             as_user: true,
-            unfurl_links: true,
-            unfurl_media: true,
+            unfurl_links: false,
+            unfurl_media: false,
             attachments: [
               {
                 fallback: 'Open the job on Upwork',
