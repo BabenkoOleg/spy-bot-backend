@@ -11,11 +11,11 @@ module SpyBot
             unfurl_media: true,
             attachments: [
               {
-                fallback: 'Open the job on the site',
+                fallback: 'Open the job on Upwork',
                 actions: [
                   {
                     type: 'button',
-                    text: 'Open the job on the site',
+                    text: 'Open the job on Upwork',
                     url: job.url,
                     style: 'primary'
                   }
