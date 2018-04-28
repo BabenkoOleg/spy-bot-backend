@@ -5,8 +5,8 @@ module SpyBot
     # the configuration object for SpyBot::ApiClient::Upwork
     attr_accessor :upwork_api_client_config
 
-    # the access token for SpyBot::ApiClient::Slack
-    attr_accessor :slack_api_client_token
+    # the access token and channel ID for SpyBot::ApiClient::Slack
+    attr_accessor :slack_api_client_token, :slack_api_client_channel
   end
 
   class << self

@@ -1,17 +1,15 @@
 class Job < Sequel::Model
   def to_message
     <<~HEREDOC
-      `New job`
-      *#{created_at.strftime("%B %d %H:%M:%S")}*
+    *```#{title}```*
 
-      `Title`
-      #{title}
+      *Date:* `#{created_at.strftime("%B %d %H:%M:%S")}`
 
-      `Url`
-      #{url}
+      *Skills:* `#{skills}`
 
-      `Snippet`
-      #{snippet[0..120]}...
+      *Category:* `#{category}`
+
+      *Snippet:*\n#{snippet[0..500].split("\n").map { |line| "> #{line}" }.join("\n")}
     HEREDOC
   end
 end

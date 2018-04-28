@@ -8,4 +8,5 @@ SpyBot.configure do |config|
   }
 
   config.slack_api_client_token = ENV['slack_api_client_token']
+  config.slack_api_client_channel = ENV['slack_api_client_channel']
 end

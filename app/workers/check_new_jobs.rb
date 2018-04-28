@@ -23,6 +23,8 @@ class CheckNewJobs
         created_at: DateTime.parse(data['date_created'])
       )
     end
+
+    jobs.each { |job| SpyBot::ApiClient::Slack.send_job_notifications(job) }
   end
 end
 
