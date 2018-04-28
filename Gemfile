@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 ruby '2.5.0'
 
-gem 'sinatra'
 gem 'puma'
 gem 'figaro'
 gem 'sequel'
@@ -13,3 +12,4 @@ gem 'upwork-api'
 gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem 'telegram-bot-ruby'
+gem 'slack-ruby-client'
