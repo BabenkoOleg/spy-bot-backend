@@ -5,7 +5,7 @@ class Job < Sequel::Model
 
       *Date:* `#{created_at.strftime("%B %d %H:%M:%S")}`
 
-      *Skills:* #{slills.any? ? `#{skills}` : ''}
+      *Skills:* #{skills.present? ? `#{skills}` : ''}
 
       *Category:* `#{category}`
 

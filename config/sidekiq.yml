@@ -8,4 +8,4 @@ max_retries:  0
   - spy-bot
 :schedule:
   CheckNewJobs:
-    every: '20s'
+    every: '30s'
