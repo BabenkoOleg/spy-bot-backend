@@ -9,25 +9,6 @@ DATA_BASE = Sequel.connect({
   logger: Logger.new(ENV['sequel_log_file_path'])
 })
 
-DATA_BASE.create_table? :categories do
-  primary_key :id
-  String :upwork_id
-  String :title
-end
-
-DATA_BASE.create_table? :subcategories do
-  primary_key :id
-  foreign_key :category_id, :categories
-  String :upwork_id
-  String :title
-end
-
-DATA_BASE.create_table? :skills do
-  primary_key :id
-  String :title
-  index :title
-end
-
 DATA_BASE.create_table? :jobs do
   primary_key :id
   String :category
@@ -44,15 +25,4 @@ DATA_BASE.create_table? :jobs do
   Integer :budget
   column :created_at, 'timestamp with time zone'
   index :upwork_id
-end
-
-DATA_BASE.create_table? :observations do
-  primary_key :id
-  String :q
-  String :title
-  String :skills
-  String :category
-  String :subcategory
-  String :job_type
-  index :title
 end
