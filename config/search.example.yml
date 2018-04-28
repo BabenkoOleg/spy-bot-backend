@@ -1,0 +1,31 @@
+searching_filter:
+
+  # The search query. At least one of the 'q', 'title', 'skill' parameters should be specified.
+  q:
+
+  # Searches for the title of the job's profile.
+  title: 'ruby'
+
+  # Searches for skills in the job's profile.
+  skills:
+
+  # The subcategory of the job according to the list of Categories 2.0. Example: 'Web & Mobile Development'.
+  subcategory2:
+
+  # The type of the Job. Valid values: hourly, fixed.
+  job_type:
+
+  # The duration of the job. Valid values: week, month, quarter, semester, ongoing.
+  duration:
+
+  # Indicates the workload for the job. Valid values: as_needed, part_time, full_time.
+  workload:
+
+  # Default: 0;10 Pagination, formed as '$offset;$count'. Page size is restricted to be <= 100. Example: page=20;10.
+  paging:
+
+processing_filter:
+
+  # Exclusion from the final processing of works that have such skills. Example: 'python,php'.
+  except_skills: 'php'
+

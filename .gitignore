@@ -4,6 +4,7 @@
 *.DS_Store
 Thumbs.db
 /config/environment.yml
+/config/search.yml
 /log/*
 /tmp/*
 !/log/.keep
