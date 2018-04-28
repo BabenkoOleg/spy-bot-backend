@@ -7,6 +7,8 @@ module SpyBot
             channel: SpyBot.config.slack_api_client_channel,
             text: job.to_message,
             as_user: true,
+            unfurl_links: true,
+            unfurl_media: true,
             attachments: [
               {
                 fallback: 'Open the job on the site',

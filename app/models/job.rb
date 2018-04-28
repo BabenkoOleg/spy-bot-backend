@@ -5,11 +5,11 @@ class Job < Sequel::Model
 
       *Date:* `#{created_at.strftime("%B %d %H:%M:%S")}`
 
-      *Skills:* `#{skills}`
+      *Skills:* #{slills.any? ? `#{skills}` : ''}
 
       *Category:* `#{category}`
 
-      *Snippet:*\n#{snippet[0..500].split("\n").map { |line| "> #{line}" }.join("\n")}
+      *Snippet:*\n#{snippet.split("\n").map { |line| "> #{line}" }.join("\n")}
     HEREDOC
   end
 end
