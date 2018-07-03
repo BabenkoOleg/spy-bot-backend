@@ -1,0 +1,14 @@
+production:
+  sequel_database: 'spy_bot'
+  sequel_adapter: 'postgres'
+  sequel_max_connections: '10'
+  sequel_log_file_path: 'log/sequel.log'
+
+  upwork_api_consumer_key:
+  upwork_api_consumer_secret:
+  upwork_api_access_token:
+  upwork_api_access_secret:
+  upwork_api_signature_method: 'HMAC-SHA1'
+
+  slack_api_client_token:
+  slack_api_client_channel:
